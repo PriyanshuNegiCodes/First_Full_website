@@ -1,0 +1,57 @@
+<mat-card class="example-card">
+    <mat-card-header>
+      <mat-card-title-group>
+        <mat-card-title>Add Music Track</mat-card-title>
+      </mat-card-title-group>
+    </mat-card-header>
+    <mat-card-content>
+<form [formGroup]="musicForm" (ngSubmit)="onSubmit()">
+    <mat-form-field class="example-full-width">
+      <mat-label>Customer ID</mat-label>
+      <input matInput type="number" placeholder="Enter customer ID" formControlName="customerId">
+    </mat-form-field>
+    <mat-form-field class="example-full-width">
+      <mat-label>Customer Name</mat-label>
+      <input matInput type="text" placeholder="Enter customer name" formControlName="customerName">
+    </mat-form-field>
+    <mat-form-field class="example-full-width">
+      <mat-label>Customer Phone Number</mat-label>
+      <input matInput type="number" placeholder="Enter customer phone number" formControlName="customerPhoneNumber">
+    </mat-form-field>
+    <mat-form-field class="example-full-width">
+      <mat-label>Customer Password</mat-label>
+      <input matInput type="password" placeholder="Enter customer password" formControlName="customerPassword">
+    </mat-form-field>
+  
+    <!-- <div formArrayName="track">
+        <div *ngFor="let track of musicForm.get('track')['controls']; let i = index">
+          <mat-form-field>
+            <mat-label>Track Name</mat-label>
+            <input matInput type="text" placeholder="Enter track name" formControlName="trackName">
+          </mat-form-field>
+          <mat-form-field>
+            <mat-label>Track Rating</mat-label>
+            <input matInput type="number" placeholder="Enter track rating" formControlName="trackRating">
+          </mat-form-field>
+          <mat-form-field>
+            <mat-label>Artist Name</mat-label>
+            <input matInput type="text" placeholder="Enter artist name" formControlName="trackArtist.artistName">
+          </mat-form-field>
+          <mat-form-field>
+            <mat-label>Artist Age</mat-label>
+            <input matInput type="number" placeholder="Enter artist age" formControlName="trackArtist.artistAge">
+          </mat-form-field>
+          <mat-checkbox formControlName="trackListened">Track Listened</mat-checkbox>
+          <button mat-raised-button color="warn" type="button" (click)="musicForm.get('track')['removeAt'](i)">Remove Track</button>
+        </div>
+      </div> -->
+            
+      
+  
+    <button mat-raised-button color="primary" type="button" (click)="addTrack()">Add Track</button>
+    <button mat-raised-button color="accent" type="submit">Submit</button>
+  </form>
+  
+    </mat-card-content>
+  </mat-card>
+  
