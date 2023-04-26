@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { MusicServiceService } from '../service/music-service.service';
 
 @Component({
   selector: 'app-information',
@@ -9,7 +10,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 export class InformationComponent implements OnInit {
   myForm:any|FormGroup;
 
-  constructor(private fb: FormBuilder) {}
+  constructor(private fb: FormBuilder, private musicservice:MusicServiceService) {}
 
   ngOnInit() {
     this.myForm = this.fb.group({
@@ -19,6 +20,13 @@ export class InformationComponent implements OnInit {
 
   findByUser() {
     console.log(this.myForm.get('inputValue').value);
-    // You can call your print method here
+    this.musicservice.getTrackByName(this.myForm.get('inputValue')).subscribe(response=>
+      {
+        console.log(response);
+      },
+      error=>{
+        alert(error);
+      }
+      )
   }
 }

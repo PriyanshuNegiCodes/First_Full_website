@@ -16,11 +16,13 @@ export class MusicServiceService {
     return this.http.post<User>(`${this.apiServerUrl}/api/Track/v1/addTrack`, addData);
   }
   getTrackByName(songName: string){
-    alert(songName)
+
     let httpHeader=new HttpHeaders({
-      'Authorization': 'Bearer' +localStorage.getItem('jwt')
-    })  
+      'Authorization': 'Bearer ' +localStorage.getItem('jwt')
+    })
+    console.log(typeof songName)  
     let requestOptions={headers:httpHeader}
-    return this.http.get<User>(`${this.apiServerUrl}/api/Track/v1/findTrackByName/${songName}`, requestOptions);
+    return this.http.get(`${this.apiServerUrl}/api/Track/v1/findTrackByName/${songName}`, requestOptions);
+    // return this.http.get(`http://localhost:63300/api/Track/v1/findTrackByName/Rahulsong`, requestOptions);
   }
 }

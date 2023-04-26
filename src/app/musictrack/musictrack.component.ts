@@ -51,6 +51,6 @@ export class MusictrackComponent implements OnInit{
     this.musicService.addTracks(this.musicForm.value).subscribe((response: User) => {
       console.log(response); // or do something else with the response
     });
-
+    this.musicForm.reset();
   }
 }
