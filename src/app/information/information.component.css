@@ -1,3 +1,8 @@
+mat-card{
+    width: 70vw;
+    margin-left: 10%;
+    margin-top: 5%;
+}
 .example-card {
     max-width: 80%;
     margin-bottom: 8px;
@@ -9,18 +14,11 @@
 
   .example-form {
     min-width: 150px;
-    max-width: 500px;
-    width: 100%;
+    max-width: 300px;
+    width: 80%;
   }
   
-  .example-full-width {
-    width: 100%;
-  }
-
-  .tracks button{
-    margin-left: 20px;
-  }
-
-  .addButton{
-    margin-right: 20px;
+  form{
+    display: flex;
+    flex-direction: column;
   }

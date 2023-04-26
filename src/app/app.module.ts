@@ -20,13 +20,17 @@ import { MatCheckboxModule } from '@angular/material/checkbox';
 import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { MusicServiceService } from './service/music-service.service';
+import { LoginComponent } from './login/login.component';
+import { InformationComponent } from './information/information.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     MusictrackComponent,
-    SideNavComponent
+    SideNavComponent,
+    LoginComponent,
+    InformationComponent
   ],
   imports: [
     BrowserModule,
