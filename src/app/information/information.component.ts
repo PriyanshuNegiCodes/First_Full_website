@@ -20,7 +20,7 @@ export class InformationComponent implements OnInit {
 
   findByUser() {
     console.log(this.myForm.get('inputValue').value);
-    this.musicservice.getTrackByName(this.myForm.get('inputValue')).subscribe(response=>
+    this.musicservice.getTrackByName(this.myForm.get('inputValue').value).subscribe(response=>
       {
         console.log(response);
       },

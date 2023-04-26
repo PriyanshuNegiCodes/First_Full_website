@@ -20,7 +20,7 @@ export class MusicServiceService {
     let httpHeader=new HttpHeaders({
       'Authorization': 'Bearer ' +localStorage.getItem('jwt')
     })
-    console.log(typeof songName)  
+    console.log(localStorage.getItem('jwt'));
     let requestOptions={headers:httpHeader}
     return this.http.get(`${this.apiServerUrl}/api/Track/v1/findTrackByName/${songName}`, requestOptions);
     // return this.http.get(`http://localhost:63300/api/Track/v1/findTrackByName/Rahulsong`, requestOptions);
