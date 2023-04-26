@@ -16,3 +16,7 @@
   .example-full-width {
     width: 100%;
   }
+
+  .tracks button{
+    margin-left: 20px;
+  }
